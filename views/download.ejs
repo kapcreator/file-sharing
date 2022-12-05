@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KapShare</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <div class="container">
+    <a href="/" class="brand-container">
+      <img src="/img/icon.png" />
+      <div class="brand__title">KapShare <br> <div class="brand__subtitle">Simplify File Sharing</div></div>
+    </a>
+    <form action="/download" method="post" class="form" id="form">
+      <% !locals.fileData && (fileData = { title: "", password: "" }) %> 
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" placeholder="Title" class="form-control" value="<%= fileData.title %>" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Password" class="form-control" value="<%= fileData.password %>">
+      </div>
+      <button type="submit">Download</button>
+    </form>
+    <% if (locals.alert) { %>
+      <div class="alert">
+        <%= locals.alert %> 
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KapShare</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="brand-container">
+      <img src="/img/icon.png" />
+      <div class="brand__title">KapShare <br> <div class="brand__subtitle">Simplify File Sharing</div></div>
+    </a>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="form" id="form">
+      <% !locals.fileData && (fileData = { title: "", password: "" }) %> 
+      <div>
+        <label for="file">File:</label>
+        <input type="file" name="file" id="file" required>
+      </div>
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" placeholder="Title" class="form-control" value="<%= fileData.title %>" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Password (Optional)" class="form-control" value="<%= fileData.password %>">
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+    <div class="form__note">NOTE: Uploaded file will automatically deleted after 1 day!</div>
+
+    <% if (locals.alert) { %>
+      <div class="alert">
+        <%= locals.alert %> 
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

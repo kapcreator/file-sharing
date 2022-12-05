@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KapShare</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="brand-container">
+      <img src="/img/icon.png" />
+      <div class="brand__title">KapShare <br> <div class="brand__subtitle">Simplify File Sharing</div></div>
+    </a>
+    <div class="home__btns">
+      <a href="/upload" class="btn">Upload</a>
+      <a href="/download" class="btn">Download</a>
+      <a href="/browse" class="btn">Browse</a>
+    </div>
+
+    <% if (locals.alert) { %>
+      <div class="alert alert-success">
+        <%= locals.alert %> 
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
