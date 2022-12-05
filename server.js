@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
-const upload = multer({ dest: "public/uploads" })
+const upload = multer({ dest: "uploads" })
 
 app.get("/", (req, res) => {    
   handleExpiredFiles(req, res);
